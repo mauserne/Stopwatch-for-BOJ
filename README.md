@@ -12,3 +12,5 @@ https://my-chair.tistory.com/6
 https://stackoverflow.com/questions/28825492/chrome-broadcast-message-to-content-scripts
 
 https://stackoverflow.com/questions/66618136/persistent-service-worker-in-chrome-extension
+
+https://stackoverflow.com/questions/18679474/chrome-extension-create-a-new-tab-by-click-a-button
