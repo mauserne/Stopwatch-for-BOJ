@@ -6,7 +6,7 @@
 
 ## 설치
 
-[![Chrome Web Store](https://storage.googleapis.com/web-dev-uploads/image/WlD8wC6g8khYWPJUsQceQkhXSlv1/UV4C4ybeBTsZt43U4xis.png)](https://chrome.google.com/webstore/detail/dimkkbacmkehbbkgbocfgnbkoodgemcf/preview?hl=ko&authuser=0)
+[![Chrome Web Store](https://storage.googleapis.com/web-dev-uploads/image/WlD8wC6g8khYWPJUsQceQkhXSlv1/UV4C4ybeBTsZt43U4xis.png)](https://chrome.google.com/webstore/detail/stopwatch-for-boj/dimkkbacmkehbbkgbocfgnbkoodgemcf?hl=ko&authuser=0)
 
 ## 기능 설명
 
