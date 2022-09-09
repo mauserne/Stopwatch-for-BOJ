@@ -3,6 +3,7 @@
   "description": "백준 코딩테스트 용 스톱워치 확장프로그램",
   "version": "1.0",
   "manifest_version": 3,
+  "permissions": ["storage", "activeTab", "scripting"],
   "background": {
     "service_worker": "background.js"
   },
