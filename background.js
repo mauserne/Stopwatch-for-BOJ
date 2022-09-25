@@ -24,15 +24,20 @@ const starttimer = () => {
     if (ts < 10) {
       ts = "0" + sec;
     }
-    chrome.tabs.query({}, function (tabs) {
+    chrome.tabs.query({}, (tabs) => {
       for (var i = 0; i < tabs.length; ++i) {
-        chrome.tabs.sendMessage(tabs[i].id, { timetick: tm + ":" + ts });
+        let url = tabs[i].url;
+        if (url.includes("https://www.acmicpc.net/")) {
+          chrome.tabs.sendMessage(tabs[i].id, { timetick: tm + ":" + ts });
+        }
       }
     });
   }, 1000);
 };
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  console.log(sender.tab ? "from a content script:" + sender.tab.url : "from the extension");
+  console.log(
+    sender.tab ? "from a content script:" + sender.tab.url : "from the extension"
+  );
   if (request.button === "play") {
     if (!timer_isActive) {
       starttimer();
@@ -45,7 +50,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     timer_isActive = false;
     clearInterval(timer);
     time = 0;
-    chrome.tabs.query({}, function (tabs) {
+    chrome.tabs.query({}, (tabs) => {
       for (var i = 0; i < tabs.length; ++i) {
         chrome.tabs.sendMessage(tabs[i].id, { timetick: "- - : - -" });
       }
