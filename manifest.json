@@ -1,7 +1,7 @@
 {
-  "name": "Stopwatch for BOJ",
+  "name": "Stopwatch for BOJ 1.0.1",
   "description": "백준 코딩테스트 용 스톱워치 확장프로그램",
-  "version": "1.0",
+  "version": "1.0.1",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
