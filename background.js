@@ -42,6 +42,14 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (!timer_isActive) {
       starttimer();
       timer_isActive = true;
+      if (time == 0){
+
+        chrome.tabs.query({}, (tabs) => {
+          for (var i = 0; i < tabs.length; ++i) {
+            chrome.tabs.sendMessage(tabs[i].id, { timetick: "00:00" });
+          }
+        });
+      }
     }
   } else if (request.button === "pause") {
     timer_isActive = false;
