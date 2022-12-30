@@ -14,38 +14,6 @@ d.innerHTML = `
 
 document.body.appendChild(d);
 
-const st = document.createElement("style");
-st.innerText = `
-.btnBox > i:hover{
-
-  filter : invert(100%);
-  transition : all 0.2s;
-}
-
-.s4boj {
-  zoom:0.65;
-
-  border-top-left-radius : 13px !important;
-  border-top-right-radius : 13px !important;
-  border-bottom-left-radius : 13px !important;
-
-  padding-right: 2rem;
-  padding-left: 1.5rem;
-
-	text-align : center;
-    position : fixed;
-    bottom : 0;
-    right : 0;
-    font-size : xx-large;
-	background-color : orange;
-	font-weight: bold;
-
-}
-.s4bojtime {
-	font-size : xx-large;
-}
-`;
-
 let port;
 function connect() {
   port = chrome.runtime.connect({ name: "foo" });
@@ -55,8 +23,6 @@ function connect() {
   });
 }
 connect();
-
-document.head.appendChild(st);
 
 function handler(e) {
   const target = e.target.className;
