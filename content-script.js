@@ -14,23 +14,6 @@ d.innerHTML = `
 
 document.body.appendChild(d);
 
-const st = document.createElement("style");
-st.innerText = `
-.s4boj {
-	text-align : center;
-    position : fixed;
-    bottom : 0;
-    right : 10px;
-    font-size : xx-large;
-	background-color : orange;
-	font-weight: bold;
-
-}
-.s4bojtime {
-	font-size : xx-large;
-}
-`;
-
 let port;
 function connect() {
   port = chrome.runtime.connect({ name: "foo" });
@@ -40,8 +23,6 @@ function connect() {
   });
 }
 connect();
-
-document.head.appendChild(st);
 
 function handler(e) {
   const target = e.target.className;
