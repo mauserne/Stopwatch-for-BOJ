@@ -9,6 +9,17 @@ var sec = 0;
 var tm = min;
 var ts = sec;
 
+function broadcast_time(params) {
+  chrome.tabs.query({}, (tabs) => {
+    for (var i = 0; i < tabs.length; ++i) {
+      let url = tabs[i].url;
+      if (url.includes("https://www.acmicpc.net/")) {
+        chrome.tabs.sendMessage(tabs[i].id, { timetick: params });
+      }
+    }
+  });
+}
+
 const starttimer = () => {
   timer = setInterval(() => {
     time++;
@@ -24,14 +35,7 @@ const starttimer = () => {
     if (ts < 10) {
       ts = "0" + sec;
     }
-    chrome.tabs.query({}, (tabs) => {
-      for (var i = 0; i < tabs.length; ++i) {
-        let url = tabs[i].url;
-        if (url.includes("https://www.acmicpc.net/")) {
-          chrome.tabs.sendMessage(tabs[i].id, { timetick: tm + ":" + ts });
-        }
-      }
-    });
+    broadcast_time(tm + ":" + ts);
   }, 1000);
 };
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
@@ -43,12 +47,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       starttimer();
       timer_isActive = true;
       if (time == 0){
-
-        chrome.tabs.query({}, (tabs) => {
-          for (var i = 0; i < tabs.length; ++i) {
-            chrome.tabs.sendMessage(tabs[i].id, { timetick: "00:00" });
-          }
-        });
+        broadcast_time("00:00");
       }
     }
   } else if (request.button === "pause") {
@@ -58,11 +57,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     timer_isActive = false;
     clearInterval(timer);
     time = 0;
-    chrome.tabs.query({}, (tabs) => {
-      for (var i = 0; i < tabs.length; ++i) {
-        chrome.tabs.sendMessage(tabs[i].id, { timetick: "- - : - -" });
-      }
-    });
+    broadcast_time("- - : - -");
   }
 });
 
