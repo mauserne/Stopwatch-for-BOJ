@@ -2,7 +2,9 @@
 
 > ### [Chrome Extension] 백준 코딩테스트 용 스톱워치 확장프로그램 🕔
 
-![Preview](https://lh3.googleusercontent.com/8OWMl4b6YXtoC-zkpIqrRyp3Bnzm2XkaBucfW1fVu5mxQUKx82n5ziav5brFLKYNUiVEsLAhDbxEQKTeabhe-DFrQQ=w640-h400-e365-rj-sc0x00ffffff)
+![S4BOJ110Screenshot](https://user-images.githubusercontent.com/52377363/210776854-9b3733e9-c7b1-4c20-b892-9c20aa0ef5a7.png)
+
+![GIF 2023-01-03 오후 11-04-58](https://user-images.githubusercontent.com/52377363/210782150-cd147bf7-020e-43df-8319-5b2af1cf4219.gif)
 
 ## 설치
 
