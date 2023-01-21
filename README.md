@@ -18,10 +18,6 @@
 
 본 확장 프로그램을 만들면서 참고한 자료들 입니다.
 
-<details>
-<summary>접기/펼치기 버튼</summary>
-<div markdown="1">
-
 - ### [Javascript 스톱워치 만들기 - myhappyman.tistory.com](https://myhappyman.tistory.com/21)
 
 - ### [Message Passing Example From Chrome Extensions - stackoverflow.com](https://stackoverflow.com/questions/21766990/message-passing-example-from-chrome-extensions)
@@ -35,11 +31,7 @@
   - 메니페스트 v3 부터 서비스워커(background.js)가 호출된 후 일정 시간이 지나면 비활성 상태로 들어간다. 메모리 누수 막기위함 인듯.
   - 서비스워커 호출 후 30초, 통신 후 5분 동안은 서비스 워커가 활성화 상태로 유지된다. 이를 이용한 방법을 소개한다.
 
----
-
-</div>
-</details>
-
 ## TODO
 
-0. popup에 색깔 선택기 만들기
+* popup에 크기 조절기 만들기
+* popup에 색깔 선택기 만들기
