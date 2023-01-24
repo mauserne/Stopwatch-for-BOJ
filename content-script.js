@@ -14,6 +14,17 @@ d.innerHTML = `
 
 document.body.appendChild(d);
 
+const st = document.createElement("style");
+st.innerText = `
+.s4boj {
+  zoom: 2;
+}
+`;
+
+st.className = 'S4BOJzoom'
+
+document.head.appendChild(st);
+
 let port;
 function connect() {
   port = chrome.runtime.connect({ name: "foo" });
