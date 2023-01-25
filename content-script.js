@@ -11,19 +11,9 @@ d.innerHTML = `
 		</div>
 </div>
 `;
-
 document.body.appendChild(d);
 
-const st = document.createElement("style");
-st.innerText = `
-.s4boj {
-  zoom: 2;
-}
-`;
-
-st.className = 'S4BOJzoom'
-
-document.head.appendChild(st);
+document.body.querySelector(".s4boj").style.zoom = 0.65;
 
 let port;
 function connect() {
