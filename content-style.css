@@ -1,27 +1,25 @@
-.btnBox>i:hover {
-    filter: invert(100%);
-    transition: all 0.2s;
+.btnBox > i:hover {
+  filter: invert(100%);
+  transition: all 0.2s;
 }
 
 .s4boj {
-    
-    border-top-left-radius: 13px !important;
-    border-top-right-radius: 13px !important;
-    border-bottom-left-radius: 13px !important;
+  border-top-left-radius: 13px !important;
+  border-top-right-radius: 13px !important;
+  border-bottom-left-radius: 13px !important;
 
-    padding-right: 2rem;
-    padding-left: 1.5rem;
+  padding-right: 2rem;
+  padding-left: 1.5rem;
 
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    font-size: xx-large;
-    background-color: orange;
-    font-weight: bold;
-
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: xx-large;
+  background-color: orange;
+  font-weight: bold;
 }
 
 .s4bojtime {
-    font-size: xx-large;
+  font-size: xx-large;
 }

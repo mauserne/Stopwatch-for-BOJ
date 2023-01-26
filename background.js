@@ -1,3 +1,10 @@
+chrome.runtime.onInstalled.addListener(function (details) {
+  if (details.reason == "install") {
+    console.log("install");
+    chrome.storage.sync.set({ zoom_scale: 0.65 });
+  }
+});
+
 let timer_isActive = false;
 
 var time = 0;
@@ -47,7 +54,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (!timer_isActive) {
       starttimer();
       timer_isActive = true;
-      if (time == 0){
+      if (time == 0) {
         broadcast_time("00:00");
       }
     }

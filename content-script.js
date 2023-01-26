@@ -12,8 +12,12 @@ d.innerHTML = `
 </div>
 `;
 document.body.appendChild(d);
-
 document.body.querySelector(".s4boj").style.zoom = 0.65;
+
+chrome.storage.sync.get(["zoom_scale"], function (result) {
+  document.body.querySelector(".s4boj").style.zoom = result.zoom_scale;
+  console.log(result.zoom_scale);
+});
 
 let port;
 function connect() {
