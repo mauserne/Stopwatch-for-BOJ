@@ -10,7 +10,9 @@ document.querySelector(".github-button").addEventListener("click", open_newtab);
 
 function zooming(params) {
   chrome.storage.sync.get(["zoom_scale"], function (result) {
-    chrome.storage.sync.set({ zoom_scale: result.zoom_scale + params });
+    chrome.storage.sync.set({
+      zoom_scale: Math.round((result.zoom_scale + params) * 100) / 100,
+    });
   });
   chrome.storage.sync.get(["zoom_scale"], function (result) {
     console.log(result.zoom_scale);
