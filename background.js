@@ -3,6 +3,15 @@ chrome.runtime.onInstalled.addListener(function (details) {
     console.log("install");
     chrome.storage.sync.set({ zoom_scale: 0.65 });
   }
+  if (details.reason == "update") {
+    console.log("확장프로그램이 업데이트 되었습니다.");
+    chrome.tabs.create({
+      //패치노트 url
+      url: "https://github.com/mauserne/Stopwatch-for-BOJ/releases",
+      selected: true,
+      active: true,
+    });
+  }
 });
 
 let timer_isActive = false;
