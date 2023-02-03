@@ -1,3 +1,20 @@
+chrome.runtime.onInstalled.addListener(function (details) {
+  if (details.reason == "install") {
+    console.log("install");
+    chrome.storage.sync.set({ zoom_scale: 0.65 });
+  }
+  if (details.reason == "update") {
+    console.log("확장프로그램이 업데이트 되었습니다.");
+    chrome.storage.sync.set({ zoom_scale: 0.65 });
+    chrome.tabs.create({
+      //패치노트 url
+      url: "https://github.com/mauserne/Stopwatch-for-BOJ/releases",
+      selected: true,
+      active: true,
+    });
+  }
+});
+
 let timer_isActive = false;
 
 var time = 0;
@@ -38,6 +55,7 @@ const starttimer = () => {
     broadcast_time(tm + ":" + ts);
   }, 1000);
 };
+
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   console.log(
     sender.tab ? "from a content script:" + sender.tab.url : "from the extension"
@@ -46,7 +64,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (!timer_isActive) {
       starttimer();
       timer_isActive = true;
-      if (time == 0){
+      if (time == 0) {
         broadcast_time("00:00");
       }
     }

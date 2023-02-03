@@ -3,3 +3,12 @@ html {
   width: 16rem;
   height: fit-content;
 }
+
+.zoom-controller {
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  margin: 1rem;
+}

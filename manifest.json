@@ -1,12 +1,12 @@
 {
   "name": "Stopwatch for BOJ",
   "description": "백준 코딩테스트 용 스톱워치 확장프로그램",
-  "version": "1.1.2",
+  "version": "1.2.1",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["tabs"],
+  "permissions": ["tabs", "storage"],
   "content_scripts": [
     {
       "matches": ["https://www.acmicpc.net/*"],

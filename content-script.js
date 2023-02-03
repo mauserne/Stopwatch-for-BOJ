@@ -11,8 +11,18 @@ d.innerHTML = `
 		</div>
 </div>
 `;
-
 document.body.appendChild(d);
+document.body.querySelector(".s4boj").style.zoom = 0.01;
+
+chrome.storage.sync.get(["zoom_scale"], function (result) {
+  document.body.querySelector(".s4boj").style.zoom = result.zoom_scale;
+  console.log(result.zoom_scale);
+});
+
+chrome.storage.onChanged.addListener(function (changes) {
+  document.body.querySelector(".s4boj").style.zoom = changes.zoom_scale.newValue;
+  console.log(changes.zoom_scale.newValue);
+});
 
 let port;
 function connect() {
